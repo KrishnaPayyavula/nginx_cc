@@ -1,22 +1,27 @@
-version: '3'
-services:
+version: '3'  # Specifies the version of the Docker Compose file format. Version 3 is widely used and supports modern features.
+
+services:  # Defines a list of services (containers) to be managed by Docker Compose.
+
+  # Configuration for the first application container
   app1:
-    build: .
+    build: .  # Builds the Docker image for app1 from the Dockerfile in the current directory.
     environment:
-      - APP_NAME=App1
+      - APP_NAME=App1  # Sets an environment variable APP_NAME with the value 'App1' inside the container.
     ports:
-      - "3001:3000"
+      - "3001:3000"  # Maps port 3001 on the host machine to port 3000 in the container (app1 is accessible on localhost:3001).
 
+  # Configuration for the second application container
   app2:
-    build: .
+    build: .  # Builds the Docker image for app2 from the Dockerfile in the current directory.
     environment:
-      - APP_NAME=App2
+      - APP_NAME=App2  # Sets an environment variable APP_NAME with the value 'App2' inside the container.
     ports:
-      - "3002:3000"
+      - "3002:3000"  # Maps port 3002 on the host machine to port 3000 in the container (app2 is accessible on localhost:3002).
 
+  # Configuration for the third application container
   app3:
-    build: .
+    build: .  # Builds the Docker image for app3 from the Dockerfile in the current directory.
     environment:
-      - APP_NAME=App3
+      - APP_NAME=App3  # Sets an environment variable APP_NAME with the value 'App3' inside the container.
     ports:
-      - "3003:3000"
+      - "3003:3000"  # Maps port 3003 on the host machine to port 3000 in the container (app3 is accessible on localhost:3003).
